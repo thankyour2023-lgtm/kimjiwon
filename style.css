@@ -2,3 +2,5 @@
 .loading-status{background:#fff;border:1px solid #dce5eb;border-radius:10px;padding:12px 20px;margin-bottom:24px}.loading-status #status{margin:0;background:transparent;padding:6px 0}.loading-status details{font-size:.9rem;color:#526478}
 
 .section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}.section-heading h2{margin:0}.section-heading button{margin:0;white-space:nowrap}
+
+.card span{display:block}.card span:first-child{color:#526478;font-size:.85rem;margin-bottom:2px}.card strong{color:#123b50;margin:2px 0}#b-chart{margin:12px 0}.section-heading button:disabled{opacity:.5}

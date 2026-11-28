@@ -80,8 +80,16 @@ async function loadBasic() {
 // ---- 공유 대상 ----
 function filterTargets() {
   const q = $('target-search').value.trim();
-  options($('target'), basicSectors.filter(s => (s.code + ' ' + s.name).includes(q)));
-  if ([...$('target').options].some(o => o.value === selBasic)) $('target').value = selBasic;
+  const list = basicSectors.filter(s => (s.code + ' ' + s.name).includes(q));
+  options($('target'), list);
+  // 걸러진 목록에 기존 선택이 남아 있으면 유지, 없으면 맨 위 항목으로 선택을 갱신한다.
+  if (list.some(s => s.code === selBasic)) {
+    $('target').value = selBasic;
+  } else if (list.length) {
+    selBasic = list[0].code;
+    $('target').value = selBasic;
+  }
+  updateChain();
 }
 function updateChain() {
   const s = basicSectors.find(x => x.code === selBasic);
